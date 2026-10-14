@@ -30,7 +30,7 @@ flowchart LR
 
 ## 진행 단계
 
-- [ ] 1단계: 실습 컨테이너 이미지와 로컬 실행 (`lab/`)
+- [x] 1단계: 실습 컨테이너 이미지와 로컬 실행 (`lab/`)
 - [ ] 2단계: AWS 배포 코드 (`infra/terraform/`)
 - [ ] 3단계: CI 검사와 보안 스캔 (`scripts/ci.sh`)
 - [ ] 4단계 (선택): 수업 시간 외 자동 중지, Kubernetes(k3s) 버전
