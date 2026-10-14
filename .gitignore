@@ -1,0 +1,24 @@
+# 학생 명단·비밀번호·인증서 (절대 커밋 금지)
+lab/secrets/
+*.pem
+*.key
+.env
+.env.*
+
+# labctl이 만드는 파일 (실행 환경마다 다름)
+lab/out/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+crash.log
+*.tfplan
+
+# 스캔 결과·임시 파일
+sbom*.json
+__pycache__/
+*.pyc
+.DS_Store

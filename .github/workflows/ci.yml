@@ -1,0 +1,26 @@
+# 이 파일은 고치지 않는다. 검사 내용은 scripts/install-tools.sh와 scripts/ci.sh에서 바꾼다.
+# (클라우드 세션에서는 워크플로 파일 push가 거절되기 때문)
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: 도구 설치
+        run: |
+          if [ -f scripts/install-tools.sh ]; then bash scripts/install-tools.sh; else echo "scripts/install-tools.sh 없음, 건너뜀"; fi
+      - name: 검사
+        run: |
+          if [ -f scripts/ci.sh ]; then bash scripts/ci.sh; else echo "scripts/ci.sh 없음, 건너뜀"; fi
